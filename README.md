@@ -1,1 +1,6 @@
-# mongo
+# mongodb
+
+
+> pip install pymongo
+
+
