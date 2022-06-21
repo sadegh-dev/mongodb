@@ -1,7 +1,7 @@
 import pymongo
 
 
-# Connect to Monog DataBase
+# Connect to Mongodb
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -14,11 +14,6 @@ mydb = myclient[db_name]
 
 # Connect to the Collection [create Collection]
 
-mycol = mydb["customers"]
-
-
-# List of Collections
-
-collections_ = mydb.list_collection_names()
-print(collections_)
+collection_name = "customers"
+mycol = mydb[collection_name]
 
