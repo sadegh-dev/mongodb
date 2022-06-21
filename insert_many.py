@@ -1,7 +1,7 @@
 import pymongo
 
 
-# Connect to Monog DataBase
+# Connect to Mongodb
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -14,21 +14,11 @@ mydb = myclient[db_name]
 
 # Connect to the Collection [create Collection]
 
-mycol = mydb["customers"]
+collection_name = "customers"
+mycol = mydb[collection_name]
 
 
-# Insert [One] Document (record)
-
-data_ = {
-    "name" : "charlie" ,
-    "address" : "berlin, street 4"
-}
-
-#id_insert_data = mycol.insert_one(data_)
-#print(id_insert_data)
-
-
-# Insert [more] Document
+# Insert Multiple Documents
 
 data_ = [
     { "name": "Amy", "address": "Apple st 652"},
@@ -51,4 +41,3 @@ print(ids_insert_data)
 
 # insert data with id_
 # Refer to the educational source ...
-

@@ -1,7 +1,7 @@
 import pymongo
 
 
-# Connect to Mongo
+# Connect to Mongodb
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
