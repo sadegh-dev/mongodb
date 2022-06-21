@@ -1,7 +1,7 @@
 import pymongo
 
 
-# Connect to Monog DataBase
+# Connect to Mongodb
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -14,18 +14,17 @@ mydb = myclient[db_name]
 
 # Connect to the Collection [create Collection]
 
-mycol = mydb["customers"]
+collection_name = "customers"
+mycol = mydb[collection_name]
 
 
 # find one data
 
-#data_ = mycol.find_one()
-#print(data_)
+data_ = mycol.find_one()
+print(data_)
 
 
-# find all data
-
-data_ = mycol.find()
-for x in data_:
-    print(x)
+# can Return Some Fields
+# Check Resource:
+# https://www.w3schools.com/python/python_mongodb_find.asp
 
