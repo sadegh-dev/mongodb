@@ -25,8 +25,11 @@ data_ = {
     "address" : "hamburg, street 48"
 }
 
-id_insert_data = mycol.insert_one(data_)
-print(id_insert_data)
+the_data = mycol.insert_one(data_)
+print(the_data)
+
+# Id of Data
+print(the_data.inserted_id)
 
 
 # insert data with id_

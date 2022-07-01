@@ -19,6 +19,7 @@ mycol = mydb[collection_name]
 
 
 # Insert Multiple Documents
+# List
 
 data_ = [
     { "name": "Amy", "address": "Apple st 652"},
@@ -35,8 +36,13 @@ data_ = [
     { "name": "Viola", "address": "Sideway 1633"}
 ]
 
-ids_insert_data = mycol.insert_many(data_)
-print(ids_insert_data)
+the_data = mycol.insert_many(data_)
+print(the_data)
+
+
+# IDs of data
+for id_ in the_data.inserted_ids:
+    print(id_)
 
 
 # insert data with id_
