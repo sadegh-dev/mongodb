@@ -18,15 +18,6 @@ collection_name = "customers"
 mycol = mydb[collection_name]
 
 
-# find multiple data
-
-myquery = { 
-    '$or':[
-        {'name': 'charlie'} ,
-        {'name': 'Michael'}
-    ]
-}
-
 """
 {'name': 'charlie', 'address': 'berlin, street 4'}
 {'name': 'Amy', 'address': 'Apple st 652'}
@@ -51,13 +42,10 @@ myquery = {
 {'name': 'Susan', 'address': 'One way 98'}
 """
 
+###########################
+###########################
 
-
-
-data_ = mycol.find(myquery,{'_id':0})
-#print(data_)
-
-
+# 1 #######################
 data_ = mycol.aggregate([{
     '$group' : {
         '_id' : "$name",
@@ -67,6 +55,11 @@ data_ = mycol.aggregate([{
     }
 }])
 
+
+
+
+###########################
+###########################
 
 # Access All Documents
 
